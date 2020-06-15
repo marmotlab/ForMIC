@@ -297,7 +297,6 @@ class MAF_gym(gym.Env):
 
             # All agents start in the middle now
             numSpots = numCaches * queueLength
-            self.no_agents_queued = np.random.randint(0, min(numSpots,self.numAgents)+1)
             if self.no_agents_queued > 0:
                 resourceCacheRatio = 0. # all agents at nest initially
 

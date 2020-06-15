@@ -898,7 +898,7 @@ class CSAFController():
 if __name__ == "__main__":
     
     env_shape = (64,64) 
-    env_numAgents = 2
+    env_numAgents = 32
     env_freeAgentPlacement = "evenCorners"
 
     env = MAF_gym(shape=env_shape, numAgents=env_numAgents, no_agents_queued=0, pheroActionDecay=1, pheroTimeDecay=0.925, episodeNumber=20000, 

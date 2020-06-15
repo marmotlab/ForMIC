@@ -605,10 +605,6 @@ if __name__ == "__main__":
     
     env = MAF_gym(shape=env_shape, numAgents=env_numAgents, no_agents_queued=0, pheroActionDecay=1, pheroTimeDecay=0.925, episodeNumber=20000, freeAgentPlacement=env_freeAgentPlacement, freeAgentFull=0.0, pheroAutoUpdate=False, tempResources=True)
 
-    
-    from MAF_gym_noodom.envs.MAF_env import BeaconEnv
-    env = BeaconEnv(env)    
-    env.mutex = Lock()    
     beacon = BeaconController(env)
     
     env.render(unloadedPheromones=True)
