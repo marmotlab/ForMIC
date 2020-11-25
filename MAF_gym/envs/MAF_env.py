@@ -300,10 +300,9 @@ class MAF_gym(gym.Env):
             if self.no_agents_queued > 0:
                 resourceCacheRatio = 0. # all agents at nest initially
                 
-
                 # We have a limited number of cache queue spots. Make sure we don't overfill them
-                self.no_agents_queued = min((self.no_agents_queued * (1 - resourceCacheRatio),
-                                             4 * self.RCs[0].queue.length)
+                self.no_agents_queued = int(min(self.no_agents_queued * (1 - resourceCacheRatio),
+                                             4 * self.RCs[0].queue.length))
 
                 self.state, self.RCs, self.agents = spawnAgentsAtRCs(self.state, self.RCs, self.no_agents_queued,
                                                                       resourceCacheRatio=resourceCacheRatio)
